@@ -46,7 +46,19 @@ const showAnimation = () => {
       <p id="${obj.inputVal}" style="margin-top: ${obj.marginTop}px;" class="animation-frame">decimalToBinary(${obj.inputVal})</p>
       `;
     }, obj.addElDelay);
+
+    setTimeout(() => {
+      document.getElementById(obj.inputVal).textContent = obj.msg;
+    }, obj.showMsgDelay);
+
+    setTimeout(() => {
+      document.getElementById(obj.inputVal).remove();
+    }, obj.removeElDelay);
   });
+
+  setTimeout(() => {
+    result.textContent = decimalToBinary(5);
+  }, 20000);
 };
 
 const checkUserInput = () => {
